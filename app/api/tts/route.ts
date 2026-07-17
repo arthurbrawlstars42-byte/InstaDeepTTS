@@ -6,13 +6,6 @@ interface TTSRequest {
   voiceId: string;
 }
 
-interface ElevenLabsResponse {
-  ok: boolean;
-  arrayBuffer: () => Promise<ArrayBuffer>;
-  status: number;
-  statusText: string;
-}
-
 export async function POST(request: NextRequest) {
   try {
     const body: TTSRequest = await request.json();
