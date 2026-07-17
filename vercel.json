@@ -1,0 +1,11 @@
+{
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_ELEVENLABS_API_KEY": {
+      "description": "ElevenLabs API Key for Text-to-Speech"
+    }
+  }
+}
