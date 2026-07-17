@@ -1,11 +1,38 @@
 {
-  "buildCommand": "next build",
-  "devCommand": "next dev",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
+  "outputDirectory": ".next",
   "env": {
     "NEXT_PUBLIC_ELEVENLABS_API_KEY": {
-      "description": "ElevenLabs API Key for Text-to-Speech"
+      "description": "ElevenLabs API Key (opcional - usuários podem adicionar via interface)"
     }
-  }
+  },
+  "headers": [
+    {
+      "source": "/api/tts",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, private"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }
